@@ -13,8 +13,8 @@ int main(int argc, char *argv[]){
 	std::vector<SACC::T> v;
 	SACC::RecordFactory factory;
 
-	//v = factory.MakeRandom(500,0,500);
-	v = factory.MakeAlmostSorted(1,500,30);
+	v = factory.MakeRandom(100,1,100);
+	//v = factory.MakeAlmostSorted(1,1000,70);
 	std::cout << v.size() << '\n';
 
 	SDL_Window* window = nullptr;
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	std::cout << "\nSorting...\n";
-	SACC::Insertion_sort(v, renderer);
+	SACC::Bubble_sort(v, renderer);
 
 	SDL_Delay(1000);
 

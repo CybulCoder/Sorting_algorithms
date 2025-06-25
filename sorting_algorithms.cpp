@@ -2,6 +2,7 @@
 
 namespace SACC{
 
+
 /*
 *   INSERTION SORT
 */
@@ -34,6 +35,32 @@ void Insertion_sort(std::vector<T>& data, SDL_Renderer* rend){
             drawState(rend, data, i, j);
             SDL_Delay(DELAY);
     }
+}
+
+/*
+*   BUBBLE SORT
+*/
+
+void Bubble_sort(std::vector<T>& data, SDL_Renderer* rend){
+    SDL_Event e;
+    bool was_swapped = true;
+    for(size_t i = 0; i < data.size()-1; i++){
+        was_swapped = false;
+        for(size_t j = data.size()-1; j>i; j--){
+            if(data[j] < data[j-1]){
+                std::swap(data[j], data[j-1]);
+                was_swapped = true;
+            }
+            while (SDL_PollEvent(&e)) {
+                if (e.type == SDL_QUIT) return;
+            }
+            drawState(rend, data, 0, j);
+            SDL_Delay(DELAY);
+        } //for j
+        if(!was_swapped){
+            break;
+        }
+    } //for i
 }
 
 
