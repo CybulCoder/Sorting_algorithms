@@ -9,7 +9,7 @@
 
 namespace SACC{
     
-    using T = unsigned short; //When changed, make sure to adjust sorting_algorithms.h
+    using T = unsigned short; //When changed, make sure to adjust sorting_algorithms.h and visualization.h
 
     constexpr size_t width = 6;
     constexpr size_t cols = 20;
